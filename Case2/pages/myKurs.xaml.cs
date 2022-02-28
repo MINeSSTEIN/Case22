@@ -27,21 +27,25 @@ namespace Case2.pages
             InitializeComponent();
             FrameApp.db.Courses.Load();
             FrameApp.db.Teachers.Load();
-
+            var tchr = FrameApp.db.Teachers.FirstOrDefault(x => x.Users.id == FrameApp.UserID);
             var usr = FrameApp.db.Users.FirstOrDefault(x => x.id == FrameApp.UserID);
             FrameApp.db.TeachersAndCourses.Load();
 
             foreach (var a in FrameApp.db.Courses.Local)
             {
-                
-                var k = new KourseToShow();
-                k.Hours = a.Hours.ToString();
-                k.Theme = a.Theme;
-                k.Leader = a.Teachers.FIO;
-                k.Subject = a.Subjects.Name;
+                foreach(var b in FrameApp.db.TeachersAndCourses)
+                {
+                    if(b.TeacherID == tchr.id && b.CourseID == a.id)
+                    {
+                        var k = new KourseToShow();
+                        k.Hours = a.Hours.ToString();
+                        k.Theme = a.Theme;
+                        k.Leader = a.Teachers.FIO;
+                        k.Subject = a.Subjects.Name;
 
-                lv_c.Items.Add(k);
-
+                        lv_c.Items.Add(k);
+                    }
+                }
             }
         }
     }

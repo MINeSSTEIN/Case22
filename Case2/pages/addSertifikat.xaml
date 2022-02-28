@@ -23,35 +23,18 @@
         <ScrollViewer Grid.Row="2" Grid.ColumnSpan="2">
             <StackPanel HorizontalAlignment="Center">
                 <StackPanel Width="400" Margin="0,20,0,0">
-                    <Label Content="Название курса"
-                   FontSize="16"
-                   FontWeight="Bold"/>
-                    <ComboBox x:Name="txb_title"
-                     FontSize="16"/>
 
-                    <Label Content="Тема курса"
+                    <Label Content="Курс"
                    FontSize="16"
                    FontWeight="Bold"/>
-                    <TextBox x:Name="txb_tema"
-                     FontSize="16" IsEnabled="False"
+                    <ComboBox x:Name="txb_tema"
+                     FontSize="16"
                              />
 
-                    <Label Content="Фамилия участника"
+                    <Label Content="Участник"
                    FontSize="16"
                    FontWeight="Bold"/>
-                    <TextBox x:Name="txb_familia"
-                     FontSize="16"/>
-                    
-                    <Label Content="Имя участника"
-                   FontSize="16"
-                   FontWeight="Bold"/>
-                    <TextBox x:Name="txb_name"
-                     FontSize="16"/>
-                    
-                    <Label Content="Отчество участника"
-                   FontSize="16"
-                   FontWeight="Bold"/>
-                    <TextBox x:Name="txb_otchestvo"
+                    <ComboBox x:Name="txb_otchestvo"
                      FontSize="16"/>
 
                     <StackPanel Orientation="Horizontal">
@@ -80,11 +63,6 @@
                              
                      FontSize="16" IsEnabled="False"/>
                     </StackPanel>
-                    <Label Content="Преподаватель курса"
-                   FontSize="16"
-                   FontWeight="Bold"/>
-                    <TextBox x:Name="txb_prepod"
-                     FontSize="16" IsEnabled="False"/>
                     <Button x:Name="btn_addKurs" Content="Добавить" FontWeight="Bold" Height="30" Width="120" Margin="40"/>
                 </StackPanel>
 
